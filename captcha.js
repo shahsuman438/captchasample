@@ -14,7 +14,7 @@ function initCaptcha() {
 		.on("keyup", function() {
 			if ($(this).val() !== "" && $(this).val() == captchaAns)
 				$(this).addClass("correct");
-                
+				
 			else
 				$(this).removeClass("correct");
 		});
@@ -30,3 +30,5 @@ function generateCaptcha() {
 	}
 	return randomNo(10)+" "+randomOp()+" "+randomNo(10);
 }
+
+

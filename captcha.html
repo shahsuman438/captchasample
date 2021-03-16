@@ -10,10 +10,31 @@
     
 </head>
 <body>
-    <input type="text" id="captcha" required>
+    <form action="" method="POST">
+        <span id="result"></span> <br>
+        <input type="text" id="captcha" required onchange="checkcorrect()">
+        <input type="submit" value="Submit" id="btnsub">
+      </form>
     <script src="jq.min.js" type="text/javascript"></script>
     <script src="captcha.js" type="text/javascript"></script>
+    <script>
+        function checkcorrect(){
+        var c=document.getElementsByClassName("correct");
+        console.log(c)
+        console.log(c.length)
 
+        if (c.length==0){
+            console.log("not correct answer")
+            document.getElementById("btnsub").disabled = true;
+            document.getElementById("result").innerHTML = "CAPTCHA INCORRECT"; 
+        }
+        else{
+            console.log("correct answer")
+            document.getElementById("btnsub").disabled = false;
+            document.getElementById("result").innerHTML = "CAPTCHA CORRECT PROCCED TO SUBMIT";
+        }
+    }
+    </script>
 </body>
 
 </html>
